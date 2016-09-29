@@ -1,7 +1,11 @@
 {
   "name": "aem-component-helper",
-  "version": "0.7.0",
+  "version": "0.7.5",
   "description": "AEM Shell Component CLI Tools",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sljones1/aem-component-helper.git"
+  },
   "bin" : {
   	"aem-component":"bin/component.js"
   },
