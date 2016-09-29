@@ -1,4 +1,5 @@
 ## AEM Component CLI
+[![NPM](https://nodei.co/npm/aem-component-helper.png)](https://nodei.co/npm/aem-component-helper/)
 This Tool was designed to create AEM Skeleton Components via the command line.
 It allows for a lot of different options for the Skeleton Component.
 ### Basic Usage
