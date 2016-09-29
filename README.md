@@ -12,6 +12,7 @@ Creates this structure
 C01-headline
 |-- _cq_dialog.xml
 |-- .content.xml
+|-- _cq_editConfig.xml
 |-- C01-headline.html
 |-- clientlib
     |--.content.xml
