@@ -1,6 +1,6 @@
 {
   "name": "aem-component-helper",
-  "version": "0.7.6",
+  "version": "0.8.0",
   "description": "AEM Shell Component CLI Tools",
   "repository": {
     "type": "git",
