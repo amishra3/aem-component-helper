@@ -69,7 +69,7 @@ let clientlib = `<?xml version="1.0" encoding="UTF-8"?>
 <jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
     jcr:primaryType="cq:ClientLibraryFolder"
     categories="[${program.name}]"/>`;
-let html = `<div><div>`;
+let html = `<div></div>`;
 // Function to write to a file
 let write = (file,text) => {
   fs.writeFile(file, text, (err) => {
