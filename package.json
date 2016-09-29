@@ -1,0 +1,14 @@
+{
+  "name": "aem-component-helper",
+  "version": "0.7.0",
+  "description": "AEM Shell Component CLI Tools",
+  "bin" : {
+  	"aem-component":"bin/component.js"
+  },
+  "author": "frodop10",
+  "license": "ISC",
+  "dependencies": {
+    "commander": "^2.9.0",
+    "properties": "^1.2.1"
+  }
+}
