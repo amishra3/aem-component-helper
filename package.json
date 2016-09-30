@@ -12,7 +12,6 @@
   "author": "frodop10",
   "license": "ISC",
   "dependencies": {
-    "commander": "^2.9.0",
-    "properties": "^1.2.1"
+    "commander": "^2.9.0"
   }
 }

@@ -39,11 +39,3 @@ Options:
   -c, --classic        create classic dialog
   -l, --clientlib     create component clientlib
 ```
-### Config file
-There is an option to create an `aem.config` file.
-Right now you can specify the directory and group
-Example:
-```
-directory = /apps/project/components/modular/
-group = company
-```
