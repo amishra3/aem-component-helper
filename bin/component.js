@@ -15,14 +15,14 @@ program
   .parse(process.argv);
 let path = program.name;
 // Templates
-let xml = `<?xml version="1.0" encoding="UTF-8"?>
+let xml = (item) => `<?xml version="1.0" encoding="UTF-8"?>
   <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
-    jcr:description="${program.title || program.name}"
+    jcr:description="${item.title || item.name}"
     jcr:primaryType="cq:Component"
-    jcr:title="${program.title || program.name}"
+    jcr:title="${item.title || item.name}"
     sling:resourceSuperType="foundation/components/parbase"
     allowedParents="[*/parsys]"
-    componentGroup="${program.group || `.hidden`}"/>`;
+    componentGroup="${item.group || `.hidden`}"/>`;
 let dialog = `<?xml version="1.0" encoding="UTF-8"?>
   <jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
       jcr:primaryType="nt:unstructured"
@@ -79,7 +79,7 @@ let write = (file,text) => {
 };
 // Main Function
 let create = () => {
-  write(`${path}/.content.xml`,xml);
+  write(`${path}/.content.xml`,xml(program));
   // Decides on dialog
   if(program.classic) {
     write(`${path}/dialog.xml`,classic);
