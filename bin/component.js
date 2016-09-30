@@ -3,7 +3,7 @@
 const fs = require('fs');
 let program = require('commander');
 program
-  .version('0.8.0')
+  .version('1.0.0')
   .option('-v, --verbose', 'verbose output')
   .option('-n, --name <s>', 'set name (required)')
   .option('-g, --group [s]', 'set component group (defaults to .hidden)')
