@@ -4,7 +4,7 @@ const fs = require('fs');
 let program = require('commander');
 var properties = require ("properties");
 program
-  .version('0.7.5')
+  .version('0.8.0')
   .option('-v, --verbose', 'verbose output')
   .option('-n, --name <s>', 'set name (required)')
   .option('-g, --group [s]', 'set component group (defaults to .hidden)')
@@ -49,7 +49,10 @@ let dialog = `<?xml version="1.0" encoding="UTF-8"?>
           </items>
       </content>
   </jcr:root>`;
-
+let cqEdit = `<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+  jcr:primaryType="cq:EditConfig">
+</jcr:root>`;
 let classic = `<?xml version="1.0" encoding="UTF-8"?>
 <jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
     jcr:primaryType="cq:Dialog"
@@ -69,7 +72,7 @@ let clientlib = `<?xml version="1.0" encoding="UTF-8"?>
 <jcr:root xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
     jcr:primaryType="cq:ClientLibraryFolder"
     categories="[${program.name}]"/>`;
-let html = `<div><div>`;
+let html = `<div></div>`;
 // Function to write to a file
 let write = (file,text) => {
   fs.writeFile(file, text, (err) => {
@@ -80,6 +83,7 @@ let write = (file,text) => {
 // Main Function
 let create = () => {
   write(`${path}/.content.xml`,xml(program));
+  write(`${path}/_cq_editConfig.xml`,cqEdit);
   // Decides on dialog
   if(program.classic) {
     write(`${path}/dialog.xml`,classic);
